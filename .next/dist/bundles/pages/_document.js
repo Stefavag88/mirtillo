@@ -84,20 +84,26 @@ module.exports =
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_document__ = __webpack_require__("next/document");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_document___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_document__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ant_theme_vars_less__ = __webpack_require__("./ant-theme-vars.less");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ant_theme_vars_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ant_theme_vars_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_nprogress__ = __webpack_require__("nprogress");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_nprogress__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_router__ = __webpack_require__("next/router");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_router__);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("babel-runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_document__ = __webpack_require__("next/document");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_document___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_document__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ant_theme_vars_less__ = __webpack_require__("./ant-theme-vars.less");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ant_theme_vars_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__ant_theme_vars_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_nprogress__ = __webpack_require__("nprogress");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_nprogress__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_next_router__);
 
 var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\pages\\_document.js';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -110,23 +116,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-__WEBPACK_IMPORTED_MODULE_4_next_router___default.a.onRouteChangeStart = function (url) {
-    console.log('Loading: ' + url);
-    __WEBPACK_IMPORTED_MODULE_3_nprogress___default.a.start();
-};
-__WEBPACK_IMPORTED_MODULE_4_next_router___default.a.onRouteChangeComplete = function () {
-    return __WEBPACK_IMPORTED_MODULE_3_nprogress___default.a.done();
-};
-__WEBPACK_IMPORTED_MODULE_4_next_router___default.a.onRouteChangeError = function () {
-    return __WEBPACK_IMPORTED_MODULE_3_nprogress___default.a.done();
-};
-
 //for development you can use this instead of link to extracted css
-__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('style', { dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_2__ant_theme_vars_less___default.a }, __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-    }
-});
+//<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
 
 var MyDocument = function (_Document) {
     _inherits(MyDocument, _Document);
@@ -140,61 +131,61 @@ var MyDocument = function (_Document) {
     _createClass(MyDocument, [{
         key: 'render',
         value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                 'html',
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 24
+                        lineNumber: 20
                     }
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1_next_document__["Head"],
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_2_next_document__["Head"],
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 25
+                            lineNumber: 21
                         }
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1', __source: {
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 22
                         }
                     }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { charSet: 'utf-8', __source: {
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('meta', { charSet: 'utf-8', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 27
+                            lineNumber: 23
                         }
                     }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/styles.css', __source: {
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/styles.css', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 28
+                            lineNumber: 24
                         }
                     }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/nprogress.css', __source: {
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('link', { rel: 'stylesheet', href: '/static/nprogress.css', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 29
+                            lineNumber: 25
                         }
                     })
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                     'body',
                     { className: 'custom_class', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 31
+                            lineNumber: 27
                         }
                     },
                     this.props.customValue,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["Main"], {
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_document__["Main"], {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 33
+                            lineNumber: 29
                         }
                     }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["NextScript"], {
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_document__["NextScript"], {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 34
+                            lineNumber: 30
                         }
                     })
                 )
@@ -202,21 +193,37 @@ var MyDocument = function (_Document) {
         }
     }], [{
         key: 'getInitialProps',
-        value: function getInitialProps(_ref) {
-            var renderPage = _ref.renderPage;
+        value: function () {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
+                var renderPage = _ref.renderPage;
 
-            var _renderPage = renderPage(),
-                html = _renderPage.html,
-                head = _renderPage.head,
-                errorHtml = _renderPage.errorHtml,
-                chunks = _renderPage.chunks;
+                var _renderPage, html, head, errorHtml, chunks;
 
-            return { html: html, head: head, errorHtml: errorHtml, chunks: chunks };
-        }
+                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                _renderPage = renderPage(), html = _renderPage.html, head = _renderPage.head, errorHtml = _renderPage.errorHtml, chunks = _renderPage.chunks;
+                                return _context.abrupt('return', { html: html, head: head, errorHtml: errorHtml, chunks: chunks });
+
+                            case 2:
+                            case 'end':
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this);
+            }));
+
+            function getInitialProps(_x) {
+                return _ref2.apply(this, arguments);
+            }
+
+            return getInitialProps;
+        }()
     }]);
 
     return MyDocument;
-}(__WEBPACK_IMPORTED_MODULE_1_next_document___default.a);
+}(__WEBPACK_IMPORTED_MODULE_2_next_document___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = (MyDocument);
 
@@ -227,6 +234,13 @@ var MyDocument = function (_Document) {
 
 module.exports = __webpack_require__("./pages/_document.js");
 
+
+/***/ }),
+
+/***/ "babel-runtime/regenerator":
+/***/ (function(module, exports) {
+
+module.exports = require("babel-runtime/regenerator");
 
 /***/ }),
 

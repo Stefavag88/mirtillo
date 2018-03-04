@@ -78,16 +78,19 @@ module.exports =
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
 var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\components\\Footer.js';
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = (function () {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'span',
+        'footer',
         {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 4
+                lineNumber: 5
             }
         },
         'This is the footer'
@@ -109,6 +112,10 @@ var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\comp
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Footer__ = __webpack_require__("./components/Footer.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_resize_aware__ = __webpack_require__("react-resize-aware");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_resize_aware___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_resize_aware__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_next_router__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_nprogress__ = __webpack_require__("nprogress");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_nprogress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_nprogress__);
 var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\components\\Layout.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -127,6 +134,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
 var Layout = function (_React$Component) {
   _inherits(Layout, _React$Component);
 
@@ -135,7 +144,24 @@ var Layout = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
 
-    _this.childWithProp = function (children, width, height) {
+    _this.showLoadingBar = function () {
+      __WEBPACK_IMPORTED_MODULE_6_next_router___default.a.onRouteChangeStart = function (url) {
+        return __WEBPACK_IMPORTED_MODULE_7_nprogress___default.a.start();
+      };
+      __WEBPACK_IMPORTED_MODULE_6_next_router___default.a.onRouteChangeComplete = function () {
+        return setTimeout(function () {
+          return __WEBPACK_IMPORTED_MODULE_7_nprogress___default.a.done();
+        }, 300);
+      };
+      __WEBPACK_IMPORTED_MODULE_6_next_router___default.a.onRouteChangeError = function () {
+        return setTimeout(function () {
+          return __WEBPACK_IMPORTED_MODULE_7_nprogress___default.a.done();
+        }, 300);
+      };
+    };
+
+    _this.childWithProp = function (width, height) {
+      var children = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.Children.map(_this.props.children, function (child) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.cloneElement(child, { width: width, height: height });
       });
@@ -145,8 +171,9 @@ var Layout = function (_React$Component) {
       var width = _ref.width,
           height = _ref.height;
 
+      console.log('Resizing...');
       _this.setState(function (prevState, props) {
-        return { width: width, height: height };
+        return { width: width, height: height, children: _this.childWithProp(width, height) };
       });
     };
 
@@ -157,6 +184,7 @@ var Layout = function (_React$Component) {
   _createClass(Layout, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      this.showLoadingBar();
       var _ref2 = [window.innerWidth, window.innerHeight],
           width = _ref2[0],
           height = _ref2[1];
@@ -176,7 +204,7 @@ var Layout = function (_React$Component) {
         __WEBPACK_IMPORTED_MODULE_3_styled_components__["ThemeProvider"],
         { theme: __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */], __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 45
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -185,26 +213,26 @@ var Layout = function (_React$Component) {
             onlyEvent: true,
             onResize: this.handleResize, __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 46
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'layout', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 39
+                lineNumber: 49
               }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__StyledNav__["a" /* default */], { width: width, height: height, url: this.props.url, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 40
+                lineNumber: 50
               }
             }),
             children,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Footer__["a" /* default */], {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 42
+                lineNumber: 52
               }
             })
           )
@@ -504,81 +532,68 @@ var Header = function (_React$Component) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("babel-runtime/regenerator");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button__ = __webpack_require__("antd/lib/button");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Layout__ = __webpack_require__("./components/Layout.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_isomorphic_unfetch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layout__ = __webpack_require__("./components/Layout.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch__);
+var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\pages\\index.js';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\pages\\index.js',
-    _this = this;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
 
 
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
 
-var App = function App(props) {
-    return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_3__components_Layout__["a" /* default */],
-        { url: props.url, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 8
-            }
-        },
-        __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default.a,
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 9
-                }
-            },
-            'Test Antd'
-        ),
-        __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-            'h3',
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 10
-                }
-            },
-            'This is the HOME Page ',
-            props.name
-        )
-    );
-};
+    function App() {
+        _classCallCheck(this, App);
 
-App.getInitialProps = function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
-        var req = _ref.req;
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-            while (1) {
-                switch (_context.prev = _context.next) {
-                    case 0:
-                        return _context.abrupt('return', { name: 'Vaggelis' });
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
 
-                    case 1:
-                    case 'end':
-                        return _context.stop();
-                }
-            }
-        }, _callee, _this);
-    }));
+    _createClass(App, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            var url = this.props.url;
 
-    return function (_x) {
-        return _ref2.apply(this, arguments);
-    };
-}();
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */],
+                { url: url, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 16
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 17
+                        }
+                    },
+                    'Hello World'
+                )
+            );
+        }
+    }]);
+
+    return App;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+;
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
@@ -636,13 +651,6 @@ module.exports = require("antd/lib/icon");
 
 /***/ }),
 
-/***/ "babel-runtime/regenerator":
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/regenerator");
-
-/***/ }),
-
 /***/ "isomorphic-unfetch":
 /***/ (function(module, exports) {
 
@@ -654,6 +662,20 @@ module.exports = require("isomorphic-unfetch");
 /***/ (function(module, exports) {
 
 module.exports = require("next/link");
+
+/***/ }),
+
+/***/ "next/router":
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "nprogress":
+/***/ (function(module, exports) {
+
+module.exports = require("nprogress");
 
 /***/ }),
 

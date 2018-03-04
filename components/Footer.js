@@ -1,5 +1,6 @@
 import React from 'react'
+import styled from 'styled-components'
 
 export default () => (
-    <span>This is the footer</span>
+    <footer>This is the footer</footer>
 )

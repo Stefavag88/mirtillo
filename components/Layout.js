@@ -3,39 +3,49 @@ import { theme } from '../theme'
 import { ThemeProvider } from 'styled-components'
 import Footer from './Footer'
 import ResizeAware from 'react-resize-aware'
+import Router from 'next/router'
+import NProgress from 'nprogress'
 
 class Layout extends React.Component {
 
-  constructor(){
+  constructor() {
     super();
     this.state = {}
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    this.showLoadingBar();
     const [width, height] = [window.innerWidth, window.innerHeight];
-    this.setState({width, height, children: this.childWithProp(this.props.children, width, height)});
+    this.setState({ width, height, children: this.childWithProp(this.props.children, width, height) });
   }
 
-  childWithProp = (children, width, height) => React.Children.map(this.props.children, (child) => {
-    return React.cloneElement(child, {width, height});
+  showLoadingBar = () => {
+    Router.onRouteChangeStart = (url) => NProgress.start();
+    Router.onRouteChangeComplete = () => setTimeout(() => NProgress.done(), 300);
+    Router.onRouteChangeError = () => setTimeout(() => NProgress.done(), 300);
+  }
+
+  childWithProp = (width, height, children = null) => React.Children.map(this.props.children, (child) => {
+    return React.cloneElement(child, { width, height });
   });
 
-  handleResize = ({width, height}) => {
+  handleResize = ({ width, height }) => {
+    console.log('Resizing...')
     this.setState((prevState, props) => {
-      return {width, height};
+      return { width, height, children: this.childWithProp(width, height) };
     })
   };
 
   render() {
 
-    const {width, height, children} = this.state;
+    const { width, height, children } = this.state;
 
 
     return (
       <ThemeProvider theme={theme}>
         <ResizeAware style={{ position: 'relative' }}
-                onlyEvent
-                onResize={this.handleResize}>
+          onlyEvent
+          onResize={this.handleResize}>
           <div className='layout'>
             <Header width={width} height={height} url={this.props.url} />
             {children}

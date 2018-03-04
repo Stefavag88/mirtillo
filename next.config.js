@@ -1,7 +1,9 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const withCSS = require('@zeit/next-css');
 
-module.exports = {
+module.exports = withCSS({
+  cssModules: true,
   webpack: (config, { dev }) => {
     config.module.rules.push(
       {
@@ -28,4 +30,4 @@ module.exports = {
 
     return config
   }
-}
+})
