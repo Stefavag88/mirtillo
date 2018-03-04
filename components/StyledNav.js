@@ -1,7 +1,9 @@
 import React from 'react'
 import { colors, sizes } from '../theme'
-import ResizeAware from 'react-resize-aware'
 import StyledMenu from './StyledMenu'
+import StyledButton from './StyledButton'
+import Icon from 'antd/lib/icon'
+import StyledHr from './StyledHr'
 
 
 class Header extends React.Component {
@@ -14,20 +16,20 @@ class Header extends React.Component {
     handleMenuToggle = ({ }) => this.setState({ menuToggleOpen: !this.state.menuToggleOpen });
 
     render() {
-        const { url } = this.props;
+        const { url, width } = this.props;
 
         return (
             <div>
-                {this.props.width >= 500 &&
+                {width >= sizes.tablet &&
                     <StyledMenu url={url} />
                 }
-                {this.props.width < 500 &&
-                    <button onClick={this.handleMenuToggle}>
-                        Toggle
-                    </button>
+                {width < sizes.tablet &&
+                    <StyledButton icon='bars' float='right' onClick={this.handleMenuToggle} />
                 }
-                {(this.props.width < 500 && this.state.menuToggleOpen) && <StyledMenu url={url} />}
+                {(width < sizes.tablet && this.state.menuToggleOpen) && <StyledMenu url={url} />}
+                {(width >= sizes.tablet || this.state.menuToggleOpen) && <StyledHr width={width}/>}
             </div>
+
         )
     }
 }

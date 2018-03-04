@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -176,7 +176,7 @@ var Layout = function (_React$Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_3_styled_components__["ThemeProvider"],
-        { theme: __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* theme */], __source: {
+        { theme: __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */], __source: {
             fileName: _jsxFileName,
             lineNumber: 36
           }
@@ -258,6 +258,51 @@ var _jsxFileName = "C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\comp
 
 /***/ }),
 
+/***/ "./components/StyledButton.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button__ = __webpack_require__("antd/lib/button");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button__);
+var _templateObject = _taggedTemplateLiteral(['\n    border: none;\n    border-radius:50%;\n    font-size:1.5rem;\n    font-weight:700;\n    float: ', '\n'], ['\n    border: none;\n    border-radius:50%;\n    font-size:1.5rem;\n    font-weight:700;\n    float: ', '\n']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var StyledButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default()(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default.a)(_templateObject, function (props) {
+    return props.float;
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (StyledButton);
+
+/***/ }),
+
+/***/ "./components/StyledHr.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__theme__ = __webpack_require__("./theme/index.js");
+var _templateObject = _taggedTemplateLiteral(['\n  height:0;\n  border:0;\n&:after{\n  display:block;\n  content:"";\n  border-top:1px solid rgba(0, 0, 0, 0.3);\n  width:', '\n  margin:auto;\n  height:6px;\n  background: radial-gradient(ellipse at 50% -100%,  rgba(0,0,0,0.6) 0,rgba(255,255,255,0) 70%); /* W3C */\n}\n'], ['\n  height:0;\n  border:0;\n&:after{\n  display:block;\n  content:"";\n  border-top:1px solid rgba(0, 0, 0, 0.3);\n  width:', '\n  margin:auto;\n  height:6px;\n  background: radial-gradient(ellipse at 50% -100%,  rgba(0,0,0,0.6) 0,rgba(255,255,255,0) 70%); /* W3C */\n}\n']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var StyledHr = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.hr(_templateObject, function (props) {
+  return props.width >= __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet ? '100%' : '97%';
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (StyledHr);
+
+/***/ }),
+
 /***/ "./components/StyledMenu.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -269,9 +314,10 @@ var _jsxFileName = "C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\comp
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__theme__ = __webpack_require__("./theme/index.js");
 var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\components\\StyledMenu.js';
 
-var _templateObject = _taggedTemplateLiteral(['\nbox-sizing: border-box;\npadding:0.1em;\ndisplay: flex;\n\n@media all and (max-width: 500px){\n    flex-direction:column;\n}\n'], ['\nbox-sizing: border-box;\npadding:0.1em;\ndisplay: flex;\n\n@media all and (max-width: 500px){\n    flex-direction:column;\n}\n']);
+var _templateObject = _taggedTemplateLiteral(['\nbox-sizing: border-box;\npadding:0.1em;\ndisplay: flex;\n\n@media all and (max-width: ', 'px){\n    flex-direction:column;\n}\n'], ['\nbox-sizing: border-box;\npadding:0.1em;\ndisplay: flex;\n\n@media all and (max-width: ', 'px){\n    flex-direction:column;\n}\n']);
 
 
 
@@ -281,7 +327,8 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 
 
-var StyledMenu = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.nav(_templateObject);
+
+var StyledMenu = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.nav(_templateObject, __WEBPACK_IMPORTED_MODULE_4__theme__["a" /* sizes */].tablet);
 
 /* harmony default export */ __webpack_exports__["a"] = (function (_ref) {
     var url = _ref.url,
@@ -291,21 +338,21 @@ var StyledMenu = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.nav(_
         {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 16
+                lineNumber: 17
             }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_2_next_link___default.a,
             { href: { pathname: "/about" }, passHref: true, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 17
+                    lineNumber: 18
                 }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__StyledMenuItem__["a" /* default */],
                 { active: url.pathname === '/about', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 19
                     }
                 },
                 'about'
@@ -315,14 +362,14 @@ var StyledMenu = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.nav(_
             __WEBPACK_IMPORTED_MODULE_2_next_link___default.a,
             { href: { pathname: "/index" }, passHref: true, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 20
+                    lineNumber: 21
                 }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__StyledMenuItem__["a" /* default */],
                 { active: url.pathname === '/index', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 21
+                        lineNumber: 22
                     }
                 },
                 'home'
@@ -332,14 +379,14 @@ var StyledMenu = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.nav(_
             __WEBPACK_IMPORTED_MODULE_2_next_link___default.a,
             { href: { pathname: "/products" }, passHref: true, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 23
+                    lineNumber: 24
                 }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__StyledMenuItem__["a" /* default */],
                 { active: url.pathname === '/products', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 24
+                        lineNumber: 25
                     }
                 },
                 'products'
@@ -356,7 +403,7 @@ var StyledMenu = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.nav(_
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
-var _templateObject = _taggedTemplateLiteral(['\n    font-size: 2rem;\n    box-sizing: border-box;\n    font-weight: 300;\n    text-transform: uppercase;\n    text-decoration: none;\n    box-shadow: ', ';\n    padding:0.2em 0.4em;\n    margin:0.5em;\n    color: ', ';\n    &:hover{\n        box-shadow: 0 -0.1em 0 ', ' inset;\n    }\n    &:active {\n        color: ', ';\n    }\n'], ['\n    font-size: 2rem;\n    box-sizing: border-box;\n    font-weight: 300;\n    text-transform: uppercase;\n    text-decoration: none;\n    box-shadow: ', ';\n    padding:0.2em 0.4em;\n    margin:0.5em;\n    color: ', ';\n    &:hover{\n        box-shadow: 0 -0.1em 0 ', ' inset;\n    }\n    &:active {\n        color: ', ';\n    }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    font-size: 1.5rem;\n    box-sizing: border-box;\n    font-weight: 300;\n    text-transform: uppercase;\n    text-decoration: none;\n    box-shadow: ', ';\n    padding:0.2em 0.4em;\n    margin:0.5em;\n    color: ', ';\n    &:hover{\n        box-shadow: 0 -0.1em 0 ', ' inset;\n    }\n    &:active {\n        color: ', ';\n    }\n'], ['\n    font-size: 1.5rem;\n    box-sizing: border-box;\n    font-weight: 300;\n    text-transform: uppercase;\n    text-decoration: none;\n    box-shadow: ', ';\n    padding:0.2em 0.4em;\n    margin:0.5em;\n    color: ', ';\n    &:hover{\n        box-shadow: 0 -0.1em 0 ', ' inset;\n    }\n    &:active {\n        color: ', ';\n    }\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -383,9 +430,11 @@ var MenuItem = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.a(_temp
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__theme__ = __webpack_require__("./theme/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_resize_aware__ = __webpack_require__("react-resize-aware");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_resize_aware___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_resize_aware__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__StyledMenu__ = __webpack_require__("./components/StyledMenu.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__StyledMenu__ = __webpack_require__("./components/StyledMenu.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__StyledButton__ = __webpack_require__("./components/StyledButton.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_antd_lib_icon__ = __webpack_require__("antd/lib/icon");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_antd_lib_icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_antd_lib_icon__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StyledHr__ = __webpack_require__("./components/StyledHr.js");
 var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\components\\StyledNav.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -397,6 +446,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -432,7 +483,9 @@ var Header = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var url = this.props.url;
+            var _props = this.props,
+                url = _props.url,
+                width = _props.width;
 
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -440,26 +493,27 @@ var Header = function (_React$Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 20
-                    }
-                },
-                this.props.width >= 500 && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledMenu__["a" /* default */], { url: url, __source: {
-                        fileName: _jsxFileName,
                         lineNumber: 22
                     }
+                },
+                width >= __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__StyledMenu__["a" /* default */], { url: url, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 24
+                    }
                 }),
-                this.props.width < 500 && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { onClick: this.handleMenuToggle, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 25
-                        }
-                    },
-                    'Toggle'
-                ),
-                this.props.width < 500 && this.state.menuToggleOpen && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledMenu__["a" /* default */], { url: url, __source: {
+                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledButton__["a" /* default */], { icon: 'bars', float: 'right', onClick: this.handleMenuToggle, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 27
+                    }
+                }),
+                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && this.state.menuToggleOpen && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__StyledMenu__["a" /* default */], { url: url, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 29
+                    }
+                }),
+                (width >= __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet || this.state.menuToggleOpen) && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__StyledHr__["a" /* default */], { width: width, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 30
                     }
                 })
             );
@@ -513,8 +567,8 @@ var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\page
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export sizes */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return theme; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return sizes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return theme; });
 var sizes = {
     desktop: 992,
     tablet: 768,
@@ -535,11 +589,25 @@ var theme = {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/about.js");
 
+
+/***/ }),
+
+/***/ "antd/lib/button":
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/button");
+
+/***/ }),
+
+/***/ "antd/lib/icon":
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/icon");
 
 /***/ }),
 

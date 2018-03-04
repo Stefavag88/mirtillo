@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 const MenuItem = styled.a`
-    font-size: 2rem;
+    font-size: 1.5rem;
     box-sizing: border-box;
     font-weight: 300;
     text-transform: uppercase;
