@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -473,88 +473,39 @@ var Header = function (_React$Component) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
+/***/ "./pages/about.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("babel-runtime/regenerator");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button__ = __webpack_require__("antd/lib/button");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Layout__ = __webpack_require__("./components/Layout.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_isomorphic_unfetch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layout__ = __webpack_require__("./components/Layout.js");
+var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\pages\\about.js';
 
 
 
-var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\pages\\index.js',
-    _this = this;
+/* harmony default export */ __webpack_exports__["default"] = (function (props) {
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-
-
-
-
-
-var App = function App(props) {
-    return __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_3__components_Layout__["a" /* default */],
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */],
         { url: props.url, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 8
+                lineNumber: 7
             }
         },
-        __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default.a,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
             {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 9
+                    lineNumber: 8
                 }
             },
-            'Test Antd'
-        ),
-        __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-            'h3',
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 10
-                }
-            },
-            'This is the HOME Page ',
-            props.name
+            'About Page'
         )
     );
-};
-
-App.getInitialProps = function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
-        var req = _ref.req;
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-            while (1) {
-                switch (_context.prev = _context.next) {
-                    case 0:
-                        return _context.abrupt('return', { name: 'Vaggelis' });
-
-                    case 1:
-                    case 'end':
-                        return _context.stop();
-                }
-            }
-        }, _callee, _this);
-    }));
-
-    return function (_x) {
-        return _ref2.apply(this, arguments);
-    };
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (App);
+});
 
 /***/ }),
 
@@ -584,32 +535,11 @@ var theme = {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/index.js");
+module.exports = __webpack_require__("./pages/about.js");
 
-
-/***/ }),
-
-/***/ "antd/lib/button":
-/***/ (function(module, exports) {
-
-module.exports = require("antd/lib/button");
-
-/***/ }),
-
-/***/ "babel-runtime/regenerator":
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/regenerator");
-
-/***/ }),
-
-/***/ "isomorphic-unfetch":
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 
@@ -649,4 +579,4 @@ module.exports = require("styled-components");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=about.js.map
