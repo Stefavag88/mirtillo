@@ -7,7 +7,6 @@ const StyledMenu = styled.nav`
 box-sizing: border-box;
 padding:0.1em;
 display: flex;
-
 @media all and (max-width: ${sizes.tablet}px){
     flex-direction:column;
 }

@@ -1,7 +1,6 @@
 import Header from './StyledNav'
 import { theme } from '../theme'
 import { ThemeProvider } from 'styled-components'
-import Meta from './Meta'
 import Footer from './Footer'
 import ResizeAware from 'react-resize-aware'
 

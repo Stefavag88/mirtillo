@@ -1,5 +1,14 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import stylesheet from '../ant-theme-vars.less';
+import stylesheet from '../ant-theme-vars.less'
+import NProgress from 'nprogress'
+import Router from 'next/router'
+
+Router.onRouteChangeStart = (url) => {
+  console.log(`Loading: ${url}`)
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 //for development you can use this instead of link to extracted css
 <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
@@ -17,6 +26,7 @@ export default class MyDocument extends Document {
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta charSet="utf-8" />
                     <link rel="stylesheet" href="/static/styles.css" />
+                    <link rel="stylesheet" href="/static/nprogress.css"/>
                 </Head>
                 <body className="custom_class">
                     {this.props.customValue}

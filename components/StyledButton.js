@@ -6,6 +6,7 @@ const StyledButton = styled(Button)`
     border-radius:50%;
     font-size:1.5rem;
     font-weight:700;
+    color:${props => props.theme.dark};
     float: ${props => props.float}
 `
 
