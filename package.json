@@ -1,0 +1,32 @@
+{
+  "name": "mirtillo-next",
+  "version": "1.0.0",
+  "description": "mirtillo with next js and custom server",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^3.2.3",
+    "express": "^4.16.2",
+    "file-loader": "^1.1.11",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-resize-aware": "^2.7.0",
+    "styled-components": "^3.1.6",
+    "url-loader": "^1.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "less": "^2.7.2",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.20.2"
+  }
+}
