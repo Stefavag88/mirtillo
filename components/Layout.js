@@ -40,7 +40,6 @@ class Layout extends React.Component {
 
     const { width, height, children } = this.state;
 
-
     return (
       <ThemeProvider theme={theme}>
         <ResizeAware style={{ position: 'relative' }}
@@ -51,7 +50,6 @@ class Layout extends React.Component {
             {children}
             <Footer />
           </div>
-
         </ResizeAware>
       </ThemeProvider>
     )

@@ -75,15 +75,15 @@ module.exports =
 /***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\node_modules\\next\\dist\\pages\\_error.js");
+module.exports = __webpack_require__("C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\node_modules\\next\\dist\\pages\\_error.js");
 
 
 /***/ }),
 
-/***/ "C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\node_modules\\next\\dist\\pages\\_error.js":
+/***/ "C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\node_modules\\next\\dist\\pages\\_error.js":
 /***/ (function(module, exports) {
 
-module.exports = require("C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo-Next\\node_modules\\next\\dist\\pages\\_error.js");
+module.exports = require("C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\node_modules\\next\\dist\\pages\\_error.js");
 
 /***/ })
 

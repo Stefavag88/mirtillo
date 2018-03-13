@@ -2,6 +2,7 @@ import MenuItem from './StyledMenuItem'
 import Link from 'next/link'
 import styled from 'styled-components'
 import {sizes} from '../theme'
+import {withRouter} from 'next/router';
 
 const StyledMenu = styled.nav`
 box-sizing: border-box;
@@ -12,7 +13,7 @@ display: flex;
 }
 `
 
-export default ({ url, handleItemClick }) => (
+export default withRouter(({ url, handleItemClick }) => (
     <StyledMenu>
         <Link href={{ pathname: "/about" }} passHref>
             <MenuItem active={url.pathname === '/about'}>about</MenuItem>
@@ -24,4 +25,5 @@ export default ({ url, handleItemClick }) => (
             <MenuItem active={url.pathname === '/products'}>products</MenuItem>
         </Link>
     </StyledMenu>
+    )
 )
