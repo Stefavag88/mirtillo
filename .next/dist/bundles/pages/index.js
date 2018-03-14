@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -245,149 +245,6 @@ var Layout = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Layout);
-
-/***/ }),
-
-/***/ "./components/ProductsList.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__("react-apollo");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_apollo__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("graphql-tag");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
-var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\components\\ProductsList.js';
-
-var _templateObject = _taggedTemplateLiteral(['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n'], ['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n']);
-
-
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-var POSTS_PER_PAGE = 10;
-
-function ProductsList(_ref) {
-    var _ref$data = _ref.data,
-        loading = _ref$data.loading,
-        error = _ref$data.error,
-        products = _ref$data.products;
-
-    console.log(error);
-    if (error) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'span',
-        {
-            __source: {
-                fileName: _jsxFileName,
-                lineNumber: 9
-            }
-        },
-        'Error loading posts.'
-    );
-    if (products && products.length) {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 12
-                }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'ul',
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 13
-                    }
-                },
-                products.map(function (post, index) {
-                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'li',
-                        { key: post.id, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 15
-                            }
-                        },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'span',
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 16
-                                }
-                            },
-                            index + 1,
-                            '. '
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'h3',
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 17
-                                }
-                            },
-                            post.name
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'p',
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 18
-                                }
-                            },
-                            post.description
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'footer',
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 19
-                                }
-                            },
-                            'Category: ',
-                            post.category
-                        )
-                    );
-                })
-            )
-        );
-    }
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        {
-            __source: {
-                fileName: _jsxFileName,
-                lineNumber: 26
-            }
-        },
-        'Loading...'
-    );
-}
-
-var products = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject);
-
-// The `graphql` wrapper executes a GraphQL query and makes the results
-// available on the `data` prop of the wrapped component (PostList)
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(products, {
-    options: {
-        variables: {
-            limit: POSTS_PER_PAGE
-        }
-    },
-    props: function props(_ref2) {
-        var data = _ref2.data;
-        return {
-            data: data
-        };
-    }
-})(ProductsList));
 
 /***/ }),
 
@@ -673,31 +530,7 @@ var Header = function (_React$Component) {
 
 /***/ }),
 
-/***/ "./lib/apollo.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_next_apollo__ = __webpack_require__("next-apollo");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_next_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_next_apollo__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_link_http__ = __webpack_require__("apollo-link-http");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_link_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_apollo_link_http__);
-
-
-
-var config = {
-  link: new __WEBPACK_IMPORTED_MODULE_1_apollo_link_http__["HttpLink"]({
-    uri: "http://localhost:8080/graphql", // Server URL (must be absolute)
-    opts: {
-      credentials: 'same-origin' // Additional fetch() options like `credentials` or `headers`
-    }
-  })
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_next_apollo__["withData"])(config));
-
-/***/ }),
-
-/***/ "./pages/products.js":
+/***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -705,41 +538,67 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layout__ = __webpack_require__("./components/Layout.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ProductsList__ = __webpack_require__("./components/ProductsList.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lib_apollo__ = __webpack_require__("./lib/apollo.js");
-var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\pages\\products.js';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch__);
+var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\pages\\index.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_3__lib_apollo__["a" /* default */])(function (props) {
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
 
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */],
-        { url: props.url, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 9
-            }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h1',
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 10
-                }
-            },
-            'Products Page'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ProductsList__["a" /* default */], {
-            __source: {
-                fileName: _jsxFileName,
-                lineNumber: 11
-            }
-        })
-    );
-}));
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            var url = this.props.url;
+
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */],
+                { url: url, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 16
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 17
+                        }
+                    },
+                    'Hello World'
+                )
+            );
+        }
+    }]);
+
+    return App;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+;
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
@@ -773,10 +632,10 @@ var theme = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/products.js");
+module.exports = __webpack_require__("./pages/index.js");
 
 
 /***/ }),
@@ -795,24 +654,10 @@ module.exports = require("antd/lib/icon");
 
 /***/ }),
 
-/***/ "apollo-link-http":
+/***/ "isomorphic-unfetch":
 /***/ (function(module, exports) {
 
-module.exports = require("apollo-link-http");
-
-/***/ }),
-
-/***/ "graphql-tag":
-/***/ (function(module, exports) {
-
-module.exports = require("graphql-tag");
-
-/***/ }),
-
-/***/ "next-apollo":
-/***/ (function(module, exports) {
-
-module.exports = require("next-apollo");
+module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 
@@ -844,13 +689,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-apollo":
-/***/ (function(module, exports) {
-
-module.exports = require("react-apollo");
-
-/***/ }),
-
 /***/ "react-resize-aware":
 /***/ (function(module, exports) {
 
@@ -866,4 +704,4 @@ module.exports = require("styled-components");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=products.js.map
+//# sourceMappingURL=index.js.map

@@ -1,6 +1,10 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const withCSS = require('@zeit/next-css');
+const webpack = require('webpack');
+require('dotenv').config({
+  path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env'
+});
 
 module.exports = withCSS({
   cssModules: true,
@@ -27,6 +31,10 @@ module.exports = withCSS({
     config.plugins.push(
         new ExtractTextPlugin(__dirname + '/static/styles.css')
     );
+
+    config.plugins.push(
+      new webpack.EnvironmentPlugin(process.env)
+    )
 
     return config
   }

@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/products', function() {
           var comp = 
-      webpackJsonp([4],{
+      webpackJsonp([5],{
 
 /***/ "./components/Footer.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -837,7 +837,7 @@ var _default = Header;
 
 var config = {
   link: new __WEBPACK_IMPORTED_MODULE_1_apollo_link_http__["a" /* HttpLink */]({
-    uri: 'http://localhost:8080/graphql', // Server URL (must be absolute)
+    uri: "http://localhost:8080/graphql", // Server URL (must be absolute)
     opts: {
       credentials: 'same-origin' // Additional fetch() options like `credentials` or `headers`
     }
@@ -29282,7 +29282,7 @@ var theme = {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/products.js");
@@ -29290,7 +29290,7 @@ module.exports = __webpack_require__("./pages/products.js");
 
 /***/ })
 
-},[2])
+},[3])
           return { page: comp.default }
         })
       ;
