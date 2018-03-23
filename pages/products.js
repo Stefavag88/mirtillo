@@ -7,8 +7,13 @@ export default withData((props) => {
     
     return (
         <Layout url={props.url}>
-            <h1>Products Page</h1>
-            <ProductsList/>
+            <section style={{display:'flex'}}>
+                <section className="filters" style={{border:'1px solid #eaeaea', margin:'1em', minWidth:'200px'}}>
+                Filter A
+                Filter B
+                </section>
+                <ProductsList/>
+            </section> 
         </Layout>
     );
 });

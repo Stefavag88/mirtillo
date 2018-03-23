@@ -1,5 +1,6 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import Product from './StyledCard'
 const POSTS_PER_PAGE = 10
 
 function ProductsList({
@@ -9,18 +10,12 @@ function ProductsList({
     if (error) return (<span>Error loading posts.</span>)
     if (products && products.length) {
         return (
-            <div>
-                <ul>
+            <section style={{display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center'}}>
                     {products.map((post, index) => (
-                        <li key={post.id}>
-                            <span>{index + 1}. </span>
-                            <h3>{post.name}</h3>
-                            <p>{post.description}</p>
-                            <footer>Category: {post.category}</footer>
-                        </li>
+                        <Product key={post.id} id={post.id} name={post.name} picture="marias_feet"/>
+                            
                     ))}
-                </ul>
-            </div>
+            </section>
         )
     }
     return <div>Loading...</div>

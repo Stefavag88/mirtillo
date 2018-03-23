@@ -170,7 +170,8 @@ var MyDocument = function (_Document) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                     'body',
-                    { className: 'custom_class', __source: {
+                    {
+                        __source: {
                             fileName: _jsxFileName,
                             lineNumber: 27
                         }

@@ -45,11 +45,9 @@ class Layout extends React.Component {
         <ResizeAware style={{ position: 'relative' }}
           onlyEvent
           onResize={this.handleResize}>
-          <div className='layout'>
-            <Header width={width} height={height} url={this.props.url} />
-            {children}
-            <Footer />
-          </div>
+          <Header width={width} height={height} url={this.props.url} />
+          {children}
+          <Footer />
         </ResizeAware>
       </ThemeProvider>
     )

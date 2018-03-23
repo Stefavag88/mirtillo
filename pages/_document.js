@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
                     <link rel="stylesheet" href="/static/styles.css" />
                     <link rel="stylesheet" href="/static/nprogress.css"/>
                 </Head>
-                <body className="custom_class">
+                <body>
                     {this.props.customValue}
                     <Main />
                     <NextScript />
