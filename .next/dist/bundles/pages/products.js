@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -240,142 +240,7 @@ var Layout = function (_React$Component) {
 
 /***/ }),
 
-/***/ "./components/ProductsList.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__("react-apollo");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_apollo__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("graphql-tag");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__StyledCard__ = __webpack_require__("./components/StyledCard.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_styled_components__ = __webpack_require__("styled-components");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_styled_components__);
-var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\components\\ProductsList.js';
-
-var _templateObject = _taggedTemplateLiteral(['\n    display:flex;\n    flex-wrap:wrap;\n    justify-content:center;\n    align-items:center;\n\n'], ['\n    display:flex;\n    flex-wrap:wrap;\n    justify-content:center;\n    align-items:center;\n\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n'], ['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n']);
-
-
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-var POSTS_PER_PAGE = 10;
-
-var StyledProductList = __WEBPACK_IMPORTED_MODULE_4_styled_components___default.a.section(_templateObject);
-
-function ProductsList(_ref) {
-    var _ref$data = _ref.data,
-        loading = _ref$data.loading,
-        error = _ref$data.error,
-        products = _ref$data.products;
-
-    console.log(error);
-    if (error) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'span',
-        {
-            __source: {
-                fileName: _jsxFileName,
-                lineNumber: 19
-            }
-        },
-        'Error loading posts.'
-    );
-    if (products && products.length) {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            StyledProductList,
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 22
-                }
-            },
-            products.map(function (post, index) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledCard__["a" /* default */], { key: post.id, id: post.id, name: post.name, picture: 'marias_feet', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 24
-                    }
-                });
-            })
-        );
-    }
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        {
-            __source: {
-                fileName: _jsxFileName,
-                lineNumber: 30
-            }
-        },
-        'Loading...'
-    );
-}
-
-var products = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject2);
-
-// The `graphql` wrapper executes a GraphQL query and makes the results
-// available on the `data` prop of the wrapped component (PostList)
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(products, {
-    options: {
-        variables: {
-            limit: POSTS_PER_PAGE
-        }
-    },
-    props: function props(_ref2) {
-        var data = _ref2.data;
-        return {
-            data: data
-        };
-    }
-})(ProductsList));
-
-/***/ }),
-
-/***/ "./components/StyledButton.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button__ = __webpack_require__("antd/lib/button");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__theme__ = __webpack_require__("./theme/index.js");
-var _templateObject = _taggedTemplateLiteral(['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:1.2em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.6em;\n        margin:0.4em 0.8em;\n    }\n'], ['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:1.2em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.6em;\n        margin:0.4em 0.8em;\n    }\n']);
-
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-var StyledButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default()(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default.a)(_templateObject, function (props) {
-    return props.circle ? '50%' : '0.2em';
-}, __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent, function (props) {
-    switch (props.color) {
-        case 'primary':
-            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].primary;
-        case 'hovered':
-            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].hovered;
-        case 'accent':
-            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent;
-        case 'dark':
-            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].dark;
-        default:
-            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].textLight;
-    }
-}, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone + 1, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].tablet);
-
-/* harmony default export */ __webpack_exports__["a"] = (StyledButton);
-
-/***/ }),
-
-/***/ "./components/StyledCard.js":
+/***/ "./components/Product.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -387,7 +252,9 @@ var StyledButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default()(__W
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_styled_components__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__theme__ = __webpack_require__("./theme/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StyledButton__ = __webpack_require__("./components/StyledButton.js");
-var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\components\\StyledCard.js';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_next_router__);
+var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\components\\Product.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -405,6 +272,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -448,6 +316,13 @@ var Product = function (_React$Component) {
             _this.setState({ isMouseOn: false });
         };
 
+        _this.navigateToProduct = function (id) {
+            __WEBPACK_IMPORTED_MODULE_6_next_router___default.a.push({
+                pathname: '/product/' + id
+
+            });
+        };
+
         _this.state = { isMouseOn: false };
         return _this;
     }
@@ -455,6 +330,8 @@ var Product = function (_React$Component) {
     _createClass(Product, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var _props = this.props,
                 width = _props.width,
                 height = _props.height,
@@ -465,9 +342,13 @@ var Product = function (_React$Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 StyledCard,
-                { onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave, __source: {
+                { onMouseEnter: this.onMouseEnter,
+                    onMouseLeave: this.onMouseLeave,
+                    onClick: function onClick() {
+                        return _this2.navigateToProduct(id);
+                    }, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 86
+                        lineNumber: 94
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -475,24 +356,24 @@ var Product = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 87
+                            lineNumber: 97
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { media: '(max-width: 420px)',
                         srcset: '/static/images/' + picture + '-360w.jpg 1x, /static/images/' + picture + '-360w_2x.jpg 2x', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 88
+                            lineNumber: 98
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { media: '(min-width: 421px) and (max-width: 768px)',
                         srcset: '/static/images/' + picture + '-496w.jpg 1x, /static/images/' + picture + '-496w_2x.jpg 2x', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 90
+                            lineNumber: 100
                         }
                     }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/static/images/' + picture + '-360w.jpg', alt: name, __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/static/images/' + picture + '-360w.jpg', key: id, alt: name, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 92
+                            lineNumber: 102
                         }
                     })
                 ),
@@ -500,7 +381,7 @@ var Product = function (_React$Component) {
                     StyledProductName,
                     { show: this.state.isMouseOn, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 94
+                            lineNumber: 104
                         }
                     },
                     name
@@ -510,19 +391,19 @@ var Product = function (_React$Component) {
                     StyledProductIcons,
                     { show: this.state.isMouseOn, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 95
+                            lineNumber: 105
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_2__StyledTooltip__["a" /* default */],
                         { placement: 'topLeft', title: 'Add To Favorites', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 96
+                                lineNumber: 106
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__StyledButton__["a" /* default */], { circle: true, icon: 'heart', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 97
+                                lineNumber: 107
                             }
                         })
                     )
@@ -535,6 +416,136 @@ var Product = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Product);
+
+/***/ }),
+
+/***/ "./components/ProductsList.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__("react-apollo");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_apollo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("graphql-tag");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Product__ = __webpack_require__("./components/Product.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_styled_components__);
+var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\components\\ProductsList.js';
+
+var _templateObject = _taggedTemplateLiteral(['\n    display:flex;\n    flex-wrap:wrap;\n    justify-content:center;\n    align-items:center;\n\n'], ['\n    display:flex;\n    flex-wrap:wrap;\n    justify-content:center;\n    align-items:center;\n\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n'], ['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n']);
+
+
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var POSTS_PER_PAGE = 10;
+
+var StyledProductList = __WEBPACK_IMPORTED_MODULE_4_styled_components___default.a.section(_templateObject);
+
+var ProductsList = function ProductsList(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    __WEBPACK_IMPORTED_MODULE_1_react_apollo__["Query"],
+    { query: GET_PRODUCTS, variables: { limit: props.limit }, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      }
+    },
+    function (_ref) {
+      var loading = _ref.loading,
+          error = _ref.error,
+          data = _ref.data;
+
+      if (loading) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          }
+        },
+        'Loading ...'
+      );
+      if (error) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'span',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          }
+        },
+        'Error loading posts.'
+      );
+      if (data.products && data.products.length) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          StyledProductList,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 21
+            }
+          },
+          data.products.map(function (product, index) {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Product__["a" /* default */], { key: product.id, id: product.id, name: product.name, picture: 'marias_feet', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 23
+              }
+            });
+          })
+        );
+      }
+    }
+  );
+};
+
+var GET_PRODUCTS = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject2);
+/* harmony default export */ __webpack_exports__["a"] = (ProductsList);
+
+/***/ }),
+
+/***/ "./components/StyledButton.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button__ = __webpack_require__("antd/lib/button");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__theme__ = __webpack_require__("./theme/index.js");
+var _templateObject = _taggedTemplateLiteral(['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:', ';\n    margin:0.5em 0.5em;\n'], ['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:', ';\n    margin:0.5em 0.5em;\n']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var StyledButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default()(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default.a)(_templateObject, function (props) {
+    return props.circle ? '50%' : '0.2em';
+}, __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent, function (props) {
+    switch (props.color) {
+        case 'primary':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].primary;
+        case 'hovered':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].hovered;
+        case 'accent':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent;
+        case 'dark':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].dark;
+        default:
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].textLight;
+    }
+}, function (props) {
+    return props.big ? '1.8em' : '1.2em';
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (StyledButton);
 
 /***/ }),
 
@@ -806,7 +817,7 @@ var Header = function (_React$Component) {
                         lineNumber: 24
                     }
                 }),
-                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledButton__["a" /* default */], { color: 'dark', circle: true, icon: 'bars', onClick: this.handleMenuToggle, __source: {
+                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledButton__["a" /* default */], { color: 'dark', big: true, circle: true, icon: 'bars', onClick: this.handleMenuToggle, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 27
                     }
@@ -905,19 +916,11 @@ var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-
                 lineNumber: 9
             }
         },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'section',
-            { style: { display: 'flex' }, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 10
-                }
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ProductsList__["a" /* default */], { height: props.height, width: props.width, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 15
-                }
-            })
-        )
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ProductsList__["a" /* default */], { limit: 20, height: props.height, width: props.width, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 10
+            }
+        })
     );
 }));
 
@@ -953,7 +956,7 @@ var theme = {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/products.js");

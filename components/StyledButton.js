@@ -9,7 +9,6 @@ const StyledButton = styled(Button)`
     align-self:flex-end;
     justify-self:flex-end;
     background:transparent;
-
     &:hover{
         background:transparent;
         color: ${theme.accent};
@@ -29,16 +28,8 @@ const StyledButton = styled(Button)`
         }
     }};
 
-    font-size:1.2em;
-    margin:0.5em 1em;
-    @media screen and (max-width:${sizes.phone}px){
-        font-size: 1em;
-        margin:0.3em 0.6em;
-    } 
-    @media screen and (min-width:${sizes.phone+1}px) and (max-width:${sizes.tablet}px){
-        font-size: 1.6em;
-        margin:0.4em 0.8em;
-    }
+    font-size:${props => props.big ? '1.8em' : '1.2em'};
+    margin:0.5em 0.5em;
 `
 
 export default StyledButton;

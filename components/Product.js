@@ -1,9 +1,10 @@
 import StyledIcon from './StyledIcon'
 import StyledTooltip from './StyledTooltip'
-import {Tooltip} from 'antd';
+import {Tooltip} from 'antd'
 import styled from 'styled-components'
 import { sizes } from '../theme'
-import StyledButton from './StyledButton';
+import StyledButton from './StyledButton'
+import Router from 'next/router'
 
 const StyledCard = styled.div`
     width: 320px;
@@ -79,17 +80,26 @@ class Product extends React.Component{
         this.setState({isMouseOn:false})
     }
 
+    navigateToProduct = (id) => {
+        Router.push({
+            pathname: `/product/${id}`,
+            
+          })
+    }
+
     render(){
         const {width, height, id, name, picture} = this.props; 
 
         return (
-            <StyledCard onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+            <StyledCard onMouseEnter={this.onMouseEnter} 
+                        onMouseLeave={this.onMouseLeave} 
+                        onClick={() => this.navigateToProduct(id)}>
                <StyledPic>
                     <source media="(max-width: 420px)"
                             srcset={`/static/images/${picture}-360w.jpg 1x, /static/images/${picture}-360w_2x.jpg 2x`}/>
                     <source media="(min-width: 421px) and (max-width: 768px)"
                             srcset={`/static/images/${picture}-496w.jpg 1x, /static/images/${picture}-496w_2x.jpg 2x`}/>
-                    <img src={`/static/images/${picture}-360w.jpg`} alt={name}/>        
+                    <img src={`/static/images/${picture}-360w.jpg`} key={id} alt={name}/>        
                 </StyledPic>
                 <StyledProductName show={this.state.isMouseOn}>{name}</StyledProductName>}
                 <StyledProductIcons show={this.state.isMouseOn}>

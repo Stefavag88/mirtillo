@@ -24,7 +24,7 @@ class Header extends React.Component {
                     <StyledMenu url={url} />
                 }
                 {width < sizes.tablet &&
-                    <StyledButton color='dark' circle icon='bars' onClick={this.handleMenuToggle} />
+                    <StyledButton color='dark' big circle icon='bars' onClick={this.handleMenuToggle} />
                 }
                 {(width < sizes.tablet && this.state.menuToggleOpen) && <StyledMenu url={url} />}
                 {(width >= sizes.tablet || this.state.menuToggleOpen) && <StyledHr width={width}/>}
