@@ -1,25 +1,36 @@
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import Product from './StyledCard'
-const POSTS_PER_PAGE = 10
+import styled from 'styled-components'
+const POSTS_PER_PAGE = 10;
+
+const StyledProductList = styled.section`
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+
+`
 
 function ProductsList({
-    data: { loading, error, products },
+    data: { loading, error, products }
 }) {
     console.log(error);
     if (error) return (<span>Error loading posts.</span>)
     if (products && products.length) {
         return (
-            <section style={{display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center'}}>
+            <StyledProductList>
                     {products.map((post, index) => (
                         <Product key={post.id} id={post.id} name={post.name} picture="marias_feet"/>
                             
                     ))}
-            </section>
+            </StyledProductList>
         )
     }
     return <div>Loading...</div>
 }
+
+
 
 const products = gql`
   query products($limit: Int!) {

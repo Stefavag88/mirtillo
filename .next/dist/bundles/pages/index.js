@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -248,18 +248,31 @@ var Layout = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button__ = __webpack_require__("antd/lib/button");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button__);
-var _templateObject = _taggedTemplateLiteral(['\n    border: none;\n    border-radius:50%;\n    font-size:1.5rem;\n    font-weight:700;\n    color:', ';\n    float: ', '\n'], ['\n    border: none;\n    border-radius:50%;\n    font-size:1.5rem;\n    font-weight:700;\n    color:', ';\n    float: ', '\n']);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__theme__ = __webpack_require__("./theme/index.js");
+var _templateObject = _taggedTemplateLiteral(['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:1.2em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.6em;\n        margin:0.4em 0.8em;\n    }\n'], ['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:1.2em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.6em;\n        margin:0.4em 0.8em;\n    }\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
+
 var StyledButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default()(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default.a)(_templateObject, function (props) {
-    return props.theme.dark;
-}, function (props) {
-    return props.float;
-});
+    return props.circle ? '50%' : '0.2em';
+}, __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent, function (props) {
+    switch (props.color) {
+        case 'primary':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].primary;
+        case 'hovered':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].hovered;
+        case 'accent':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent;
+        case 'dark':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].dark;
+        default:
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].textLight;
+    }
+}, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone + 1, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].tablet);
 
 /* harmony default export */ __webpack_exports__["a"] = (StyledButton);
 
@@ -485,8 +498,7 @@ var Header = function (_React$Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                {
-                    __source: {
+                { style: { display: 'flex', flexDirection: 'column' }, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 22
                     }
@@ -496,7 +508,7 @@ var Header = function (_React$Component) {
                         lineNumber: 24
                     }
                 }),
-                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledButton__["a" /* default */], { icon: 'bars', float: 'right', onClick: this.handleMenuToggle, __source: {
+                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledButton__["a" /* default */], { color: 'dark', circle: true, icon: 'bars', onClick: this.handleMenuToggle, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 27
                     }
@@ -522,7 +534,7 @@ var Header = function (_React$Component) {
 
 /***/ }),
 
-/***/ "./pages/about.js":
+/***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -530,31 +542,67 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Layout__ = __webpack_require__("./components/Layout.js");
-var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\pages\\about.js';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_isomorphic_unfetch__);
+var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\pages\\index.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function (props) {
 
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */],
-        { url: props.url, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 7
-            }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 8
-                }
-            },
-            'About Page'
-        )
-    );
-});
+
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
+
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            var url = this.props.url;
+
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */],
+                { url: url, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 16
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 17
+                        }
+                    },
+                    'Hello World'
+                )
+            );
+        }
+    }]);
+
+    return App;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+;
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
@@ -588,10 +636,10 @@ var theme = {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/about.js");
+module.exports = __webpack_require__("./pages/index.js");
 
 
 /***/ }),
@@ -607,6 +655,13 @@ module.exports = require("antd/lib/button");
 /***/ (function(module, exports) {
 
 module.exports = require("antd/lib/icon");
+
+/***/ }),
+
+/***/ "isomorphic-unfetch":
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 
@@ -653,4 +708,4 @@ module.exports = require("styled-components");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=about.js.map
+//# sourceMappingURL=index.js.map

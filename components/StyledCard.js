@@ -1,12 +1,14 @@
-import { Icon } from 'antd';
-import styled from 'styled-components';
-import { sizes } from '../theme';
+import StyledIcon from './StyledIcon'
+import StyledTooltip from './StyledTooltip'
+import {Tooltip} from 'antd';
+import styled from 'styled-components'
+import { sizes } from '../theme'
+import StyledButton from './StyledButton';
 
 const StyledCard = styled.div`
-    width: 360px;
-    height:360px;
+    width: 320px;
+    height:320px;
     margin: 1em;
-    border:1px solid #eaeaea;
     border-radius:0.2em;
     overflow:hidden;
     display:flex;
@@ -14,23 +16,20 @@ const StyledCard = styled.div`
     flex-direction:column;
     align-content: space-between;
     justify-content: space-between;
-    &:hover{ 
-        opacity:0.9
-    }
-
+    background:rgba(255,255,255,0.7);
     transition: all 0.4s ease-in-out;
     @media all and (max-width: ${sizes.phone}px){
         width: 280px;
         height:280px;
     }
-    @media all and (min-width: ${sizes.phone + 1}px) and (max-width: ${sizes.tablet}px){
-        width: 320px;
-        height:320px;
+    @media all and (min-width: 550px) and (max-width: ${sizes.tablet}px){
+        width: 496px;
+        height: 496px;
     }
 
 `
 
-const StyledImg = styled.img`
+const StyledPic = styled.picture`
     object-fit:cover;
     max-width:100%;
     z-index:2;
@@ -39,44 +38,67 @@ const StyledImg = styled.img`
     }
     transition: all 0.4s ease-in-out;
 `
-
-const StyledSpan = styled.span`
-    z-index:100;
-    font-size:1em;
-    font-weight:500;
-    color:white;
-`
-const ImageFooter = styled.div`
+const StyledProductName = styled.span`
     position:absolute;
-    color: white;
-    width:360px;
-    top:90%;
+    margin:1em;
+    bottom:0;
+    font-size:1.2em;
+    font-weight:500;
+    left:${props => props.show ? '0' : '-100%'};
+    z-index:${props => props.show ? '40' : '0'};
+    color:${props => props.show ? 'white' : 'transparent'};
+    transition: all 0.256s ease-in-out;
+`
+
+const StyledProductIcons = styled.section`
     display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:0.4em;
+    flex-direction:column;
+    position:absolute;
+    top:0;
+    font-size:1.5em;
+    font-weight:700;
+    right:${props => props.show ? '0' : '-100%'};
+    z-index:${props => props.show ? '40' : '0'};
+    color:${props => !props.show && 'transparent'};
+    transition: all 0.256s ease-in-out;
 `
 
 class Product extends React.Component{
 
-    render(){
+    constructor(){
+        super();
 
+        this.state={isMouseOn:false}
+    }
+
+    onMouseEnter = (ev) => {
+            this.setState({isMouseOn:true});
+    }
+
+    onMouseLeave = (ev) => {
+        this.setState({isMouseOn:false})
+    }
+
+    render(){
         const {width, height, id, name, picture} = this.props; 
 
         return (
-            <StyledCard>
-                <StyledImg srcset={
-                                `/static/images/${picture}-360w.jpg 320w,
-                                 /static/images/${picture}-360w_x2.jpg 320w x2,
-                                 /static/images/${picture}-496w.jpg 496w,
-                                 /static/images/${picture}-496w_x2.jpg 496w x2
-                                `}
-                           src={`/static/images/${picture}-360w.jpg`} alt={name}/>
-                <ImageFooter>
-                    <StyledSpan>{name}</StyledSpan>
-                    <Icon type="heart"/>
-                </ImageFooter>
+            <StyledCard onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+               <StyledPic>
+                    <source media="(max-width: 420px)"
+                            srcset={`/static/images/${picture}-360w.jpg 1x, /static/images/${picture}-360w_2x.jpg 2x`}/>
+                    <source media="(min-width: 421px) and (max-width: 768px)"
+                            srcset={`/static/images/${picture}-496w.jpg 1x, /static/images/${picture}-496w_2x.jpg 2x`}/>
+                    <img src={`/static/images/${picture}-360w.jpg`} alt={name}/>        
+                </StyledPic>
+                <StyledProductName show={this.state.isMouseOn}>{name}</StyledProductName>}
+                <StyledProductIcons show={this.state.isMouseOn}>
+                    <StyledTooltip placement='topLeft' title='Add To Favorites'>
+                        <StyledButton circle icon="heart"/>
+                    </StyledTooltip>
+                </StyledProductIcons>
             </StyledCard>
+             
         )
     }
    

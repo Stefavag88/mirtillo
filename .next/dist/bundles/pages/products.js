@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -251,9 +251,12 @@ var Layout = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__("graphql-tag");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__StyledCard__ = __webpack_require__("./components/StyledCard.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_styled_components__);
 var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\components\\ProductsList.js';
 
-var _templateObject = _taggedTemplateLiteral(['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n'], ['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    display:flex;\n    flex-wrap:wrap;\n    justify-content:center;\n    align-items:center;\n\n'], ['\n    display:flex;\n    flex-wrap:wrap;\n    justify-content:center;\n    align-items:center;\n\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n'], ['\n  query products($limit: Int!) {\n    products(limit: $limit) {\n      id\n      name\n      category\n      description\n      available\n    }\n  }\n']);
 
 
 
@@ -262,7 +265,10 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 
 
+
 var POSTS_PER_PAGE = 10;
+
+var StyledProductList = __WEBPACK_IMPORTED_MODULE_4_styled_components___default.a.section(_templateObject);
 
 function ProductsList(_ref) {
     var _ref$data = _ref.data,
@@ -276,23 +282,24 @@ function ProductsList(_ref) {
         {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 10
+                lineNumber: 19
             }
         },
         'Error loading posts.'
     );
     if (products && products.length) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'section',
-            { style: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }, __source: {
+            StyledProductList,
+            {
+                __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 13
+                    lineNumber: 22
                 }
             },
             products.map(function (post, index) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledCard__["a" /* default */], { key: post.id, id: post.id, name: post.name, picture: 'marias_feet', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 15
+                        lineNumber: 24
                     }
                 });
             })
@@ -303,14 +310,14 @@ function ProductsList(_ref) {
         {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 21
+                lineNumber: 30
             }
         },
         'Loading...'
     );
 }
 
-var products = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject);
+var products = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject2);
 
 // The `graphql` wrapper executes a GraphQL query and makes the results
 // available on the `data` prop of the wrapped component (PostList)
@@ -338,18 +345,31 @@ var products = __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObje
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_components__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button__ = __webpack_require__("antd/lib/button");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button__);
-var _templateObject = _taggedTemplateLiteral(['\n    border: none;\n    border-radius:50%;\n    font-size:1.5rem;\n    font-weight:700;\n    color:', ';\n    float: ', '\n'], ['\n    border: none;\n    border-radius:50%;\n    font-size:1.5rem;\n    font-weight:700;\n    color:', ';\n    float: ', '\n']);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__theme__ = __webpack_require__("./theme/index.js");
+var _templateObject = _taggedTemplateLiteral(['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:1.2em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.6em;\n        margin:0.4em 0.8em;\n    }\n'], ['\n    border: none;\n    font-family: 700;\n    border-radius:', ';\n    align-self:flex-end;\n    justify-self:flex-end;\n    background:transparent;\n\n    &:hover{\n        background:transparent;\n        color: ', ';\n    }\n    color: ', ';\n\n    font-size:1.2em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.6em;\n        margin:0.4em 0.8em;\n    }\n']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
+
 var StyledButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default()(__WEBPACK_IMPORTED_MODULE_1_antd_lib_button___default.a)(_templateObject, function (props) {
-    return props.theme.dark;
-}, function (props) {
-    return props.float;
-});
+    return props.circle ? '50%' : '0.2em';
+}, __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent, function (props) {
+    switch (props.color) {
+        case 'primary':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].primary;
+        case 'hovered':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].hovered;
+        case 'accent':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent;
+        case 'dark':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].dark;
+        default:
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].textLight;
+    }
+}, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone + 1, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].tablet);
 
 /* harmony default export */ __webpack_exports__["a"] = (StyledButton);
 
@@ -359,22 +379,22 @@ var StyledButton = __WEBPACK_IMPORTED_MODULE_0_styled_components___default()(__W
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_antd_lib_icon__ = __webpack_require__("antd/lib/icon");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_antd_lib_icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_antd_lib_icon__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components__ = __webpack_require__("styled-components");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_styled_components__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__theme__ = __webpack_require__("./theme/index.js");
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__StyledIcon__ = __webpack_require__("./components/StyledIcon.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__StyledTooltip__ = __webpack_require__("./components/StyledTooltip.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__theme__ = __webpack_require__("./theme/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StyledButton__ = __webpack_require__("./components/StyledButton.js");
 var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-Next\\components\\StyledCard.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n    width: 360px;\n    height:360px;\n    margin: 1em;\n    border:1px solid #eaeaea;\n    border-radius:0.2em;\n    overflow:hidden;\n    display:flex;\n    position:relative;\n    flex-direction:column;\n    align-content: space-between;\n    justify-content: space-between;\n    &:hover{ \n        opacity:0.9\n    }\n\n    transition: all 0.4s ease-in-out;\n    @media all and (max-width: ', 'px){\n        width: 280px;\n        height:280px;\n    }\n    @media all and (min-width: ', 'px) and (max-width: ', 'px){\n        width: 320px;\n        height:320px;\n    }\n\n'], ['\n    width: 360px;\n    height:360px;\n    margin: 1em;\n    border:1px solid #eaeaea;\n    border-radius:0.2em;\n    overflow:hidden;\n    display:flex;\n    position:relative;\n    flex-direction:column;\n    align-content: space-between;\n    justify-content: space-between;\n    &:hover{ \n        opacity:0.9\n    }\n\n    transition: all 0.4s ease-in-out;\n    @media all and (max-width: ', 'px){\n        width: 280px;\n        height:280px;\n    }\n    @media all and (min-width: ', 'px) and (max-width: ', 'px){\n        width: 320px;\n        height:320px;\n    }\n\n']),
+var _templateObject = _taggedTemplateLiteral(['\n    width: 320px;\n    height:320px;\n    margin: 1em;\n    border-radius:0.2em;\n    overflow:hidden;\n    display:flex;\n    position:relative;\n    flex-direction:column;\n    align-content: space-between;\n    justify-content: space-between;\n    background:rgba(255,255,255,0.7);\n    transition: all 0.4s ease-in-out;\n    @media all and (max-width: ', 'px){\n        width: 280px;\n        height:280px;\n    }\n    @media all and (min-width: 550px) and (max-width: ', 'px){\n        width: 496px;\n        height: 496px;\n    }\n\n'], ['\n    width: 320px;\n    height:320px;\n    margin: 1em;\n    border-radius:0.2em;\n    overflow:hidden;\n    display:flex;\n    position:relative;\n    flex-direction:column;\n    align-content: space-between;\n    justify-content: space-between;\n    background:rgba(255,255,255,0.7);\n    transition: all 0.4s ease-in-out;\n    @media all and (max-width: ', 'px){\n        width: 280px;\n        height:280px;\n    }\n    @media all and (min-width: 550px) and (max-width: ', 'px){\n        width: 496px;\n        height: 496px;\n    }\n\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    object-fit:cover;\n    max-width:100%;\n    z-index:2;\n    &:hover{\n        transform: scale(1.2);\n    }\n    transition: all 0.4s ease-in-out;\n'], ['\n    object-fit:cover;\n    max-width:100%;\n    z-index:2;\n    &:hover{\n        transform: scale(1.2);\n    }\n    transition: all 0.4s ease-in-out;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    z-index:100;\n    font-size:1em;\n    font-weight:500;\n    color:white;\n'], ['\n    z-index:100;\n    font-size:1em;\n    font-weight:500;\n    color:white;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n    position:absolute;\n    color: white;\n    width:360px;\n    top:90%;\n    display:flex;\n    justify-content: space-between;\n    align-items: center;\n    padding:0.4em;\n'], ['\n    position:absolute;\n    color: white;\n    width:360px;\n    top:90%;\n    display:flex;\n    justify-content: space-between;\n    align-items: center;\n    padding:0.4em;\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n    position:absolute;\n    margin:1em;\n    bottom:0;\n    font-size:1.2em;\n    font-weight:500;\n    left:', ';\n    z-index:', ';\n    color:', ';\n    transition: all 0.256s ease-in-out;\n'], ['\n    position:absolute;\n    margin:1em;\n    bottom:0;\n    font-size:1.2em;\n    font-weight:500;\n    left:', ';\n    z-index:', ';\n    color:', ';\n    transition: all 0.256s ease-in-out;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n    display:flex;\n    flex-direction:column;\n    position:absolute;\n    top:0;\n    font-size:1.5em;\n    font-weight:700;\n    right:', ';\n    z-index:', ';\n    color:', ';\n    transition: all 0.256s ease-in-out;\n'], ['\n    display:flex;\n    flex-direction:column;\n    position:absolute;\n    top:0;\n    font-size:1.5em;\n    font-weight:700;\n    right:', ';\n    z-index:', ';\n    color:', ';\n    transition: all 0.256s ease-in-out;\n']);
 
 
 
@@ -389,12 +409,28 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 
 
-var StyledCard = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.div(_templateObject, __WEBPACK_IMPORTED_MODULE_3__theme__["a" /* sizes */].phone, __WEBPACK_IMPORTED_MODULE_3__theme__["a" /* sizes */].phone + 1, __WEBPACK_IMPORTED_MODULE_3__theme__["a" /* sizes */].tablet);
 
-var StyledImg = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.img(_templateObject2);
 
-var StyledSpan = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.span(_templateObject3);
-var ImageFooter = __WEBPACK_IMPORTED_MODULE_2_styled_components___default.a.div(_templateObject4);
+
+
+var StyledCard = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.div(_templateObject, __WEBPACK_IMPORTED_MODULE_4__theme__["a" /* sizes */].phone, __WEBPACK_IMPORTED_MODULE_4__theme__["a" /* sizes */].tablet);
+
+var StyledPic = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.picture(_templateObject2);
+var StyledProductName = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.span(_templateObject3, function (props) {
+    return props.show ? '0' : '-100%';
+}, function (props) {
+    return props.show ? '40' : '0';
+}, function (props) {
+    return props.show ? 'white' : 'transparent';
+});
+
+var StyledProductIcons = __WEBPACK_IMPORTED_MODULE_3_styled_components___default.a.section(_templateObject4, function (props) {
+    return props.show ? '0' : '-100%';
+}, function (props) {
+    return props.show ? '40' : '0';
+}, function (props) {
+    return !props.show && 'transparent';
+});
 
 var Product = function (_React$Component) {
     _inherits(Product, _React$Component);
@@ -402,7 +438,18 @@ var Product = function (_React$Component) {
     function Product() {
         _classCallCheck(this, Product);
 
-        return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).call(this));
+
+        _this.onMouseEnter = function (ev) {
+            _this.setState({ isMouseOn: true });
+        };
+
+        _this.onMouseLeave = function (ev) {
+            _this.setState({ isMouseOn: false });
+        };
+
+        _this.state = { isMouseOn: false };
+        return _this;
     }
 
     _createClass(Product, [{
@@ -416,50 +463,76 @@ var Product = function (_React$Component) {
                 picture = _props.picture;
 
 
-            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 StyledCard,
-                {
-                    __source: {
+                { onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 67
+                        lineNumber: 86
                     }
                 },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(StyledImg, { srcset: '/static/images/' + picture + '-360w.jpg 320w,\n                                 /static/images/' + picture + '-360w_x2.jpg 320w x2,\n                                 /static/images/' + picture + '-496w.jpg 496w,\n                                 /static/images/' + picture + '-496w_x2.jpg 496w x2\n                                ',
-                    src: '/static/images/' + picture + '-360w.jpg', alt: name, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 68
-                    }
-                }),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                    ImageFooter,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    StyledPic,
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 75
+                            lineNumber: 87
                         }
                     },
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        StyledSpan,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 76
-                            }
-                        },
-                        name
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_antd_lib_icon___default.a, { type: 'heart', __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { media: '(max-width: 420px)',
+                        srcset: '/static/images/' + picture + '-360w.jpg 1x, /static/images/' + picture + '-360w_2x.jpg 2x', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 77
+                            lineNumber: 88
+                        }
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { media: '(min-width: 421px) and (max-width: 768px)',
+                        srcset: '/static/images/' + picture + '-496w.jpg 1x, /static/images/' + picture + '-496w_2x.jpg 2x', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 90
+                        }
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/static/images/' + picture + '-360w.jpg', alt: name, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 92
                         }
                     })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    StyledProductName,
+                    { show: this.state.isMouseOn, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 94
+                        }
+                    },
+                    name
+                ),
+                '}',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    StyledProductIcons,
+                    { show: this.state.isMouseOn, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 95
+                        }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_2__StyledTooltip__["a" /* default */],
+                        { placement: 'topLeft', title: 'Add To Favorites', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 96
+                            }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__StyledButton__["a" /* default */], { circle: true, icon: 'heart', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 97
+                            }
+                        })
+                    )
                 )
             );
         }
     }]);
 
     return Product;
-}(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component);
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Product);
 
@@ -488,6 +561,44 @@ var StyledHr = __WEBPACK_IMPORTED_MODULE_0_styled_components___default.a.hr(_tem
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (StyledHr);
+
+/***/ }),
+
+/***/ "./components/StyledIcon.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_antd_lib_icon__ = __webpack_require__("antd/lib/icon");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_antd_lib_icon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_antd_lib_icon__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__theme__ = __webpack_require__("./theme/index.js");
+
+
+var _templateObject = _taggedTemplateLiteral(['\n    color: ', ';\n\n    font-size:1em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1.2em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.4em;\n        margin:0.4em 0.8em;\n    } \n'], ['\n    color: ', ';\n\n    font-size:1em;\n    margin:0.5em 1em;\n    @media screen and (max-width:', 'px){\n        font-size: 1.2em;\n        margin:0.3em 0.6em;\n    } \n    @media screen and (min-width:', 'px) and (max-width:', 'px){\n        font-size: 1.4em;\n        margin:0.4em 0.8em;\n    } \n']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var StyledIcon = __WEBPACK_IMPORTED_MODULE_1_styled_components___default()(__WEBPACK_IMPORTED_MODULE_0_antd_lib_icon___default.a)(_templateObject, function (props) {
+    switch (props.color) {
+        case 'primary':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].primary;
+        case 'hovered':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].hovered;
+        case 'accent':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent;
+        case 'dark':
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].dark;
+        default:
+            return __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].textLight;
+    }
+}, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].phone + 1, __WEBPACK_IMPORTED_MODULE_2__theme__["a" /* sizes */].tablet);
+
+/* unused harmony default export */ var _unused_webpack_default_export = (StyledIcon);
 
 /***/ }),
 
@@ -685,8 +796,7 @@ var Header = function (_React$Component) {
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                {
-                    __source: {
+                { style: { display: 'flex', flexDirection: 'column' }, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 22
                     }
@@ -696,7 +806,7 @@ var Header = function (_React$Component) {
                         lineNumber: 24
                     }
                 }),
-                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledButton__["a" /* default */], { icon: 'bars', float: 'right', onClick: this.handleMenuToggle, __source: {
+                width < __WEBPACK_IMPORTED_MODULE_1__theme__["a" /* sizes */].tablet && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__StyledButton__["a" /* default */], { color: 'dark', circle: true, icon: 'bars', onClick: this.handleMenuToggle, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 27
                     }
@@ -719,6 +829,30 @@ var Header = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Header);
+
+/***/ }),
+
+/***/ "./components/StyledTooltip.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_antd_lib_tooltip__ = __webpack_require__("antd/lib/tooltip");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_antd_lib_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_antd_lib_tooltip__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__theme__ = __webpack_require__("./theme/index.js");
+
+
+var _templateObject = _taggedTemplateLiteral(['\n    background: ', ';\n    color: ', ';\n    margin-bottom:-0.5em;\n'], ['\n    background: ', ';\n    color: ', ';\n    margin-bottom:-0.5em;\n']);
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var StyledTooltip = __WEBPACK_IMPORTED_MODULE_1_styled_components___default()(__WEBPACK_IMPORTED_MODULE_0_antd_lib_tooltip___default.a)(_templateObject, __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].dark, __WEBPACK_IMPORTED_MODULE_2__theme__["b" /* theme */].accent);
+
+/* harmony default export */ __webpack_exports__["a"] = (StyledTooltip);
 
 /***/ }),
 
@@ -778,17 +912,7 @@ var _jsxFileName = 'C:\\Users\\Vaggelis\\Desktop\\WorkSpace\\Mirtillo\\Mirtillo-
                     lineNumber: 10
                 }
             },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'section',
-                { className: 'filters', style: { border: '1px solid #eaeaea', margin: '1em', minWidth: '200px' }, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 11
-                    }
-                },
-                'Filter A Filter B'
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ProductsList__["a" /* default */], {
-                __source: {
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ProductsList__["a" /* default */], { height: props.height, width: props.width, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 15
                 }
@@ -829,7 +953,7 @@ var theme = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/products.js");
@@ -848,6 +972,13 @@ module.exports = require("antd/lib/button");
 /***/ (function(module, exports) {
 
 module.exports = require("antd/lib/icon");
+
+/***/ }),
+
+/***/ "antd/lib/tooltip":
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/tooltip");
 
 /***/ }),
 

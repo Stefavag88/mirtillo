@@ -19,12 +19,12 @@ class Header extends React.Component {
         const { url, width } = this.props;
 
         return (
-            <div>
+            <div style={{display:'flex', flexDirection:'column'}}>
                 {width >= sizes.tablet &&
                     <StyledMenu url={url} />
                 }
                 {width < sizes.tablet &&
-                    <StyledButton icon='bars' float='right' onClick={this.handleMenuToggle} />
+                    <StyledButton color='dark' circle icon='bars' onClick={this.handleMenuToggle} />
                 }
                 {(width < sizes.tablet && this.state.menuToggleOpen) && <StyledMenu url={url} />}
                 {(width >= sizes.tablet || this.state.menuToggleOpen) && <StyledHr width={width}/>}
